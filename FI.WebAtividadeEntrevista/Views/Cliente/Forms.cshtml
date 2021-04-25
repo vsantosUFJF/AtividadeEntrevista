@@ -1,0 +1,179 @@
+﻿<form id="formCadastro" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Nome">Nome:</label>
+                <input required="required" type="text" class="form-control" id="Nome" name="Nome" placeholder="Ex.: João" maxlength="50">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Sobrenome">Sobrenome:</label>
+                <input required="required" type="text" class="form-control" id="Sobrenome" name="Sobrenome" placeholder="Ex.: da Silva" maxlength="255">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="CPF">CPF:</label>
+                <input required="required" type="text" class="form-control" id="CPF" name="CPF" placeholder="Ex.: 999.999.999-99" maxlength="14">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Nacionalidade">Nacionalidade:</label>
+                <input required="required" type="text" class="form-control" id="Nacionalidade" name="Nacionalidade" placeholder="Ex.: brasileira" maxlength="50">
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="CEP">CEP:</label>
+                <input required="required" type="text" class="form-control" id="CEP" name="CEP" placeholder="Ex.: 01011-100" maxlength="9">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="Estado">Estado:</label>
+                <select required="required" id="Estado" class="form-control" name="Estado">
+                    <option value="">Selecione</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="PE">Pernambuco</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="Cidade">Cidade:</label>
+                <input required="required" type="text" class="form-control" id="Cidade" name="Cidade" maxlength="50" placeholder="Ex.: São Paulo">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="Logradouro">Logradouro:</label>
+                <input required="required" type="text" class="form-control" id="Logradouro" name="Logradouro" placeholder="Ex.: Rua Boa Vista 253" maxlength="500">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Email">E-mail:</label>
+                <input required="required" type="text" class="form-control" id="Email" name="Email" placeholder="Ex.: email@email.com" maxlength="2079">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Telefone">Telefone:</label>
+                <input required="required" type="tel" class="form-control" id="Telefone" name="Telefone" placeholder="Ex.: (11) 2020-3030" maxlength="15">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#beneficiarioModal">Beneficiários</button>
+            </div>
+            <!-- Modal beneficiarios -->
+            <div class="modal fade" id="beneficiarioModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Beneficiários</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="CPF">CPF:</label>
+                                        <input type="text" class="form-control" id="CPFBene" name="CPFBeneficiario" placeholder="Ex.: 999.999.999-99" maxlength="14">
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="Nome">Nome:</label>
+                                        <input type="text" class="form-control" id="NomeBene" name="NomeBeneficiario" placeholder="Ex.: João" maxlength="50">
+                                    </div>
+                                </div>
+                                <div hidden class="form-group">
+                                    <label for="IdClient">IdClient:</label>
+                                    <input required="required" type="text" class="form-control" id="IdClient" name="IdClient" value="1" maxlength="255">
+                                </div>
+                                <button type="button" class="btn btn-sm btn-success btn-incluir">Incluir</button>
+                            </div>
+                            <div class="row">
+                                <table id="gridBeneficiarios" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>CPF</th>
+                                            <th>Nome</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="pull-right">
+                <button type="submit" class="btn btn-sm btn-success">Salvar</button>
+                @Html.ActionLink("Voltar", "Index", "Cliente", new { }, new { @class = "btn btn-sm btn-danger" })
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+<link href="~/Content/Cliente.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+<script>
+    var urlAlteracao = '@Url.Action("Alterar", "Cliente", new { area = "" })';
+    var urlAlteracaoBeneficiario = '@Url.Action("Alterar", "Beneficiario", new { area = "" })';
+    var urlBeneficiarioList = '@Url.Action("BeneficiarioList", "Beneficiario", new { area = "" })';
+    var urlExclusao = '@Url.Action("Excluir", "Beneficiario", new { area = "" })';
+
+    //formatação para o CPF
+    $("#CPF").mask("999.999.999-99");
+    $("#CPFBene").mask("999.999.999-99");
+
+
+    $(".btn-incluir").click(function () {
+        var table;
+        table += '<tr><td>' + $("#CPFBene").val() + '</td>';
+        table += '<td>' + $("#NomeBene").val() + '</td>';
+        table += '<td>' + '<button class="btn btn-primary btn-sm">Alterar</button>' + '</td>';
+        table += '<td>' + '<button id = "btn-excluir" onclick="removerElemento(event.target)" class="btn btn-primary btn-sm">Excluir</button>' + '</td></tr>';
+
+        $('#gridBeneficiarios tbody').append(table);
+
+    })
+
+
+    function removerElemento(elementoClicado) {
+        elementoClicado.closest("tr").remove();
+    }
+
+</script>

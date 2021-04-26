@@ -6,7 +6,7 @@
 @section scripts{
     <script>
         var urlPost = '@Url.Action("Alterar", "Cliente", new { area = "" })';
-        var urlPost1 = '@Url.Action("Alterar", "Beneficiario", new { area = "" })';
+        var urlPostB = '@Url.Action("Alterar", "Beneficiario", new { area = "" })';
         var obj = @Html.Raw(Json.Encode(Model));
          var obj2= @Html.Raw(Json.Encode(@ViewBag.Modelb));
         var urlRetorno = '@Url.Action("Index", "Cliente", new { area = "" })';

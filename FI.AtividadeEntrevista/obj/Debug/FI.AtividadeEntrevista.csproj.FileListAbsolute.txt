@@ -28,3 +28,9 @@ C:\Users\Valéria Santos\OneDrive\Área de Trabalho\FI.WebAtividadeEntrevista\FI
 C:\Users\Valéria Santos\OneDrive\Área de Trabalho\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.dll
 C:\Users\Valéria Santos\OneDrive\Área de Trabalho\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.pdb
 C:\Users\Valéria Santos\OneDrive\Área de Trabalho\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csprojAssemblyReference.cache
+C:\Users\Valéria Santos\OneDrive\Área de Trabalho\AtividadeEntrevista\FI.AtividadeEntrevista\bin\Debug\FI.AtividadeEntrevista.dll
+C:\Users\Valéria Santos\OneDrive\Área de Trabalho\AtividadeEntrevista\FI.AtividadeEntrevista\bin\Debug\FI.AtividadeEntrevista.pdb
+C:\Users\Valéria Santos\OneDrive\Área de Trabalho\AtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csprojAssemblyReference.cache
+C:\Users\Valéria Santos\OneDrive\Área de Trabalho\AtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csproj.CoreCompileInputs.cache
+C:\Users\Valéria Santos\OneDrive\Área de Trabalho\AtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.dll
+C:\Users\Valéria Santos\OneDrive\Área de Trabalho\AtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.pdb

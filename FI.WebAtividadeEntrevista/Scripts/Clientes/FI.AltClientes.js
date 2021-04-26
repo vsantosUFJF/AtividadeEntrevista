@@ -14,61 +14,64 @@
         $('#formCadastro #NomeBene').val(obj2.Nome);
         $('#formCadastro #CPFBene').val(obj.CPF);
 
-        var table;
-        table += '<tr  id =' + obj2.Id + '><td> ' + obj2.CPF + '</td > ';
-        table += '<td>' + obj2.Nome + '</td>';
-        table += '<td>' + '<button /*onclick="window.location.href=\'' + urlAlteracaoBeneficiario + '/' + obj2.Id + '\'"*/ class="btn btn-primary btn-sm">Alterar</button>' + '</td>';
-        table += '<td>' + '<button id = "btn-excluir" onclick="window.location.href=\'' + urlExclusao + '/' + obj.Id + '\'" class="btn btn-primary btn-sm">Excluir</button>' + '</td></tr>';
-        $('#gridBeneficiarios tbody').append(table);
+        if (obj2 != null) {
+            var table;
+            table += '<tr  id =' + obj2.Id + '><td> ' + obj2.CPF + '</td > ';
+            table += '<td>' + obj2.Nome + '</td>';
+            table += '<td>' + '<button /*onclick="window.location.href=\'' + urlAlteracaoBeneficiario + '/' + obj2.Id + '\'"*/ class="btn btn-primary btn-sm">Alterar</button>' + '</td>';
+            table += '<td>' + '<button id = "btn-excluir" onclick="window.location.href=\'' + urlExclusao + '/' + obj.Id + '\'" class="btn btn-primary btn-sm">Excluir</button>' + '</td></tr>';
+            $('#gridBeneficiarios tbody').append(table);
+        }
+        else {
+            var table;
+            $('#gridBeneficiarios tbody').append(table);
+        }
+       
     }
     
+})
 
-    $('#formCadastro').submit(function (e) {
-        e.preventDefault();
-        console.log($(this).find("#CPF").val().replace(".", "").replace(".", "").replace("-", ""))
-        $.ajax({
-            url: urlPost,
-            method: "POST",
-            data: {
-                "NOME": $(this).find("#Nome").val(),
-                "CPF": $(this).find("#CPF").val().replace(".", "").replace(".", "").replace("-", ""),
-                "CEP": $(this).find("#CEP").val(),
-                "Email": $(this).find("#Email").val(),
-                "Sobrenome": $(this).find("#Sobrenome").val(),
-                "Nacionalidade": $(this).find("#Nacionalidade").val(),
-                "Estado": $(this).find("#Estado").val(),
-                "Cidade": $(this).find("#Cidade").val(),
-                "Logradouro": $(this).find("#Logradouro").val(),
-                "Telefone": $(this).find("#Telefone").val()
-            },
-            error:
+
+$('#formCadastro').submit(function (e) {
+    e.preventDefault();
+    console.log($(this).find("#CPF").val().replace(".", "").replace(".", "").replace("-", ""))
+    $.ajax({
+        url: urlPost,
+        method: "POST",
+        data: {
+            "NOME": $(this).find("#Nome").val(),
+            "CPF": $(this).find("#CPF").val().replace(".", "").replace(".", "").replace("-", ""),
+            "CEP": $(this).find("#CEP").val(),
+            "Email": $(this).find("#Email").val(),
+            "Sobrenome": $(this).find("#Sobrenome").val(),
+            "Nacionalidade": $(this).find("#Nacionalidade").val(),
+            "Estado": $(this).find("#Estado").val(),
+            "Cidade": $(this).find("#Cidade").val(),
+            "Logradouro": $(this).find("#Logradouro").val(),
+            "Telefone": $(this).find("#Telefone").val()
+        },
+        error:
             function (r) {
                 if (r.status == 400)
                     ModalDialog("Ocorreu um erro", r.responseJSON);
                 else if (r.status == 500)
                     ModalDialog("Ocorreu um erro", "Ocorreu um erro interno no servidor.");
             },
-            success:
+        success:
             function (r) {
                 ModalDialog("Sucesso!", r)
-                $("#formCadastro")[0].reset();                                
+                $("#formCadastro")[0].reset();
                 window.location.href = urlRetorno;
             }
-        });
-
-      
-    })
-    
-})
-
-$('#formCadastro').submit(function (e) {
+    });
     e.preventDefault();
     $.ajax({
-        url: urlPost1,
+        url: urlPostB,
         method: "POST",
         data: {
             "NOME": $(this).find("#NomeBene").val(),
             "CPF": $(this).find("#CPFBene").val().replace(".", "").replace(".", "").replace("-", ""),
+            "IDCLIENTE": obj.Id
         },
 
         error:
@@ -84,6 +87,7 @@ $('#formCadastro').submit(function (e) {
                 window.location.href = urlRetorno;
             }
     });
+
 })
 
 $('#btn-excluir').click(function (e) {

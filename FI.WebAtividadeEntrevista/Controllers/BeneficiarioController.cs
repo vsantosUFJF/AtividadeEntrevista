@@ -68,7 +68,7 @@ namespace WebAtividadeEntrevista.Controllers
 
         [HttpPost]
         //editar um beneficiario
-        public JsonResult Alterar(BeneficiarioModel model, long id)
+        public JsonResult Alterar(BeneficiarioModel model)
         {
             BoBeneficiario bo = new BoBeneficiario();
 
@@ -91,9 +91,9 @@ namespace WebAtividadeEntrevista.Controllers
                 {
                     bo.Alterar(new Beneficiario()
                     {
-                        Id = id,
                         CPF = model.CPF,
                         Nome = model.Nome,
+                        IdCliente = model.IdCliente
                     });
 
                     return Json("Cadastro alterado com sucesso");
